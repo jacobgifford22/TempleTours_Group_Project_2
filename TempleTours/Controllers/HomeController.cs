@@ -40,6 +40,7 @@ namespace TempleTours.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 return View("SignUpForm", appt);
             }
             else
@@ -51,7 +52,8 @@ namespace TempleTours.Controllers
         [HttpGet]
         public IActionResult SignUpForm()
         {
-            return View();
+            ViewBag.Appointments = templeContext.Appointments.ToList();
+            return View("SignUpForm");
         }
 
         [HttpPost]
@@ -66,7 +68,8 @@ namespace TempleTours.Controllers
             }
             else
             {
-                return View("Index");
+
+                return RedirectToAction("SignUpForm", new { id = appt.AppointmentId });
             }
         }
 
@@ -78,6 +81,29 @@ namespace TempleTours.Controllers
                 .ToList();
 
             return View("Appointments",  times);
+        }
+
+        [HttpGet]
+        public IActionResult Edit (int id)
+        {
+            templeContext.Appointments.Single(x => x.AppointmentId == id);
+            return View("SignUpForm");
+        }
+
+        [HttpPost]
+        public IActionResult Edit (Appointment appt)
+        {
+            if (ModelState.IsValid)
+            {
+                templeContext.Update(appt);
+                templeContext.SaveChanges();
+
+                return View("Appointments", appt);
+            }
+            else
+            {
+                return RedirectToAction("SighUpForm", new { id = appt.AppointmentId });
+            }
         }
     }
 }
