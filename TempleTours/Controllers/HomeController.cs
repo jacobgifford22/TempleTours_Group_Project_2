@@ -67,8 +67,8 @@ namespace TempleTours.Controllers
         [HttpGet]
         public IActionResult Appointments()
         {
-            var times = templeContext.TimeSlots
-                .OrderBy(x => x.TimeSlotStart)
+            var times = templeContext.Appointments
+                .OrderBy(x => x.AppointmentTime)
                 .ToList();
 
             return View("Appointments",  times);
