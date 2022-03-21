@@ -12,5 +12,6 @@ namespace TempleTours.Models
         [Required]
         public long TimeSlotId { get; set; }
         public string TimeSlotStart { get; set; }
+        public string TimeSlotDay { get; set; }
     }
 }
