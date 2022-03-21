@@ -13,8 +13,9 @@
 <div>
     <form method="post">
 
-        <!--Make sure that this appointment time can't be changed'-->
-        <label asp-for="AppointmentTime"></label>
+        <!--Make sure that this appointment time can't be changed-->
+        <label asp-for="AppointmentTime">Appointment Time</label>
+        <input asp-for="AppointmentTime" readonly />
 
         <br />
 
@@ -36,7 +37,10 @@
         <label asp-for="Phone">Phone Number</label>
         <input asp-for="Phone" />
 
+        <br />
 
+        <button type="submit">Submit Tour</button>
+        <div asp-validation-summary="All"></div>
 
     </form>
 </div>
