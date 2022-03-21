@@ -11,6 +11,12 @@ namespace TempleTours.Controllers
 {
     public class HomeController : Controller
     {
+        private TempleToursContext templeContext { get; set; }
+
+        public HomeController(TempleToursContext tours)
+        {
+            templeContext = tours;
+        }
         
         public IActionResult Index()
         {
@@ -20,6 +26,28 @@ namespace TempleTours.Controllers
         public IActionResult SignUp()
         {
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult SignUpForm()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SignUpForm(Appointment appt)
+        {
+            if (ModelState.IsValid)
+            {
+                templeContext.Add(appt);
+                templeContext.SaveChanges();
+
+                return View("Index", appt);
+            }
+            else
+            {
+                return View("Index");
+            }
         }
     }
 }

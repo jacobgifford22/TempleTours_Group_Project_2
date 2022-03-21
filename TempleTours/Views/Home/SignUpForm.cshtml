@@ -1,0 +1,42 @@
+﻿
+@* This is for adding information after the time slot is set*@
+@{
+    ViewData["Title"] = "SignUp Form";
+}
+
+@model TempleTours.Models.Appointment
+
+
+<h1>PLease fill out the information below to secure your temple tour appointment.</h1>
+
+
+<div>
+    <form method="post">
+
+        <!--Make sure that this appointment time can't be changed'-->
+        <label asp-for="AppointmentTime"></label>
+
+        <br />
+
+        <label asp-for="GroupName">Group Name</label>
+        <input asp-for="GroupName" />
+
+        <br />
+
+        <label asp-for="GroupSize">Group Size</label>
+        <input asp-for="GroupSize"/>
+
+        <br />
+
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" />
+
+        <br />
+
+        <label asp-for="Phone">Phone Number</label>
+        <input asp-for="Phone" />
+
+
+
+    </form>
+</div>
