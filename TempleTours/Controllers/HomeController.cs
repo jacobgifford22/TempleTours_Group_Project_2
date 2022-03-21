@@ -23,9 +23,23 @@ namespace TempleTours.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult SignUp()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult SignUp(Appointment appt)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("SignUpForm", appt);
+            }
+            else
+            {
+                return View("Index");
+            }
         }
 
         [HttpGet]
@@ -48,6 +62,16 @@ namespace TempleTours.Controllers
             {
                 return View("Index");
             }
+        }
+
+        [HttpGet]
+        public IActionResult Appointments()
+        {
+            var times = templeContext.TimeSlots
+                .OrderBy(x => x.TimeSlotStart)
+                .ToList();
+
+            return View("Appointments",  times);
         }
     }
 }
