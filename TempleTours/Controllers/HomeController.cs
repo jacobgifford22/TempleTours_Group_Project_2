@@ -52,7 +52,6 @@ namespace TempleTours.Controllers
         [HttpGet]
         public IActionResult SignUpForm()
         {
-            ViewBag.Appointments = templeContext.Appointments.ToList();
             return View("SignUpForm");
         }
 
