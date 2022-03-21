@@ -1,7 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Sign Up";
 }
+
+@model TimeSlotsViewModel
+
 <h1>@ViewData["Title"]</h1>
 
 <p>You can sign up for a tour of the Layton temple here:</p>
 
+@foreach (TimeSlot x in Model.TimeSlots)
+{
+    <partial name="TimeSlotSummary" model="x" />
+}
