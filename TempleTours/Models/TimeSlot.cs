@@ -10,7 +10,7 @@ namespace TempleTours.Models
     {
         [Key]
         [Required]
-        public long TimeSlotId { get; set; }
+        public int TimeSlotId { get; set; }
         public string TimeSlotStart { get; set; }
         public string TimeSlotDay { get; set; }
     }

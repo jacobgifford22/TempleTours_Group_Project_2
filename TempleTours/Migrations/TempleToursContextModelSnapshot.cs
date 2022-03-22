@@ -21,9 +21,6 @@ namespace TempleTours.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("AppointmentTime")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -38,14 +35,19 @@ namespace TempleTours.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("TimeSlotId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("AppointmentId");
+
+                    b.HasIndex("TimeSlotId");
 
                     b.ToTable("Appointments");
                 });
 
             modelBuilder.Entity("TempleTours.Models.TimeSlot", b =>
                 {
-                    b.Property<long>("TimeSlotId")
+                    b.Property<int>("TimeSlotId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -62,550 +64,559 @@ namespace TempleTours.Migrations
                     b.HasData(
                         new
                         {
-                            TimeSlotId = 1L,
+                            TimeSlotId = 1,
                             TimeSlotDay = "Monday",
                             TimeSlotStart = "8:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 2L,
+                            TimeSlotId = 2,
                             TimeSlotDay = "Monday",
                             TimeSlotStart = "9:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 3L,
+                            TimeSlotId = 3,
                             TimeSlotDay = "Monday",
                             TimeSlotStart = "10:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 4L,
+                            TimeSlotId = 4,
                             TimeSlotDay = "Monday",
                             TimeSlotStart = "11:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 5L,
+                            TimeSlotId = 5,
                             TimeSlotDay = "Monday",
                             TimeSlotStart = "12:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 6L,
+                            TimeSlotId = 6,
                             TimeSlotDay = "Monday",
                             TimeSlotStart = "1:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 7L,
+                            TimeSlotId = 7,
                             TimeSlotDay = "Monday",
                             TimeSlotStart = "2:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 8L,
+                            TimeSlotId = 8,
                             TimeSlotDay = "Monday",
                             TimeSlotStart = "3:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 9L,
+                            TimeSlotId = 9,
                             TimeSlotDay = "Monday",
                             TimeSlotStart = "4:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 10L,
+                            TimeSlotId = 10,
                             TimeSlotDay = "Monday",
                             TimeSlotStart = "5:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 11L,
+                            TimeSlotId = 11,
                             TimeSlotDay = "Monday",
                             TimeSlotStart = "6:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 12L,
+                            TimeSlotId = 12,
                             TimeSlotDay = "Monday",
                             TimeSlotStart = "7:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 13L,
+                            TimeSlotId = 13,
                             TimeSlotDay = "Monday",
                             TimeSlotStart = "8:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 14L,
+                            TimeSlotId = 14,
                             TimeSlotDay = "Tuesday",
                             TimeSlotStart = "8:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 15L,
+                            TimeSlotId = 15,
                             TimeSlotDay = "Tuesday",
                             TimeSlotStart = "9:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 16L,
+                            TimeSlotId = 16,
                             TimeSlotDay = "Tuesday",
                             TimeSlotStart = "10:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 17L,
+                            TimeSlotId = 17,
                             TimeSlotDay = "Tuesday",
                             TimeSlotStart = "11:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 18L,
+                            TimeSlotId = 18,
                             TimeSlotDay = "Tuesday",
                             TimeSlotStart = "12:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 19L,
+                            TimeSlotId = 19,
                             TimeSlotDay = "Tuesday",
                             TimeSlotStart = "1:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 20L,
+                            TimeSlotId = 20,
                             TimeSlotDay = "Tuesday",
                             TimeSlotStart = "2:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 21L,
+                            TimeSlotId = 21,
                             TimeSlotDay = "Tuesday",
                             TimeSlotStart = "3:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 22L,
+                            TimeSlotId = 22,
                             TimeSlotDay = "Tuesday",
                             TimeSlotStart = "4:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 23L,
+                            TimeSlotId = 23,
                             TimeSlotDay = "Tuesday",
                             TimeSlotStart = "5:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 24L,
+                            TimeSlotId = 24,
                             TimeSlotDay = "Tuesday",
                             TimeSlotStart = "6:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 25L,
+                            TimeSlotId = 25,
                             TimeSlotDay = "Tuesday",
                             TimeSlotStart = "7:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 26L,
+                            TimeSlotId = 26,
                             TimeSlotDay = "Tuesday",
                             TimeSlotStart = "8:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 27L,
+                            TimeSlotId = 27,
                             TimeSlotDay = "Wednesday",
                             TimeSlotStart = "8:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 28L,
+                            TimeSlotId = 28,
                             TimeSlotDay = "Wednesday",
                             TimeSlotStart = "9:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 29L,
+                            TimeSlotId = 29,
                             TimeSlotDay = "Wednesday",
                             TimeSlotStart = "10:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 30L,
+                            TimeSlotId = 30,
                             TimeSlotDay = "Wednesday",
                             TimeSlotStart = "11:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 31L,
+                            TimeSlotId = 31,
                             TimeSlotDay = "Wednesday",
                             TimeSlotStart = "12:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 32L,
+                            TimeSlotId = 32,
                             TimeSlotDay = "Wednesday",
                             TimeSlotStart = "1:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 33L,
+                            TimeSlotId = 33,
                             TimeSlotDay = "Wednesday",
                             TimeSlotStart = "2:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 34L,
+                            TimeSlotId = 34,
                             TimeSlotDay = "Wednesday",
                             TimeSlotStart = "3:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 35L,
+                            TimeSlotId = 35,
                             TimeSlotDay = "Wednesday",
                             TimeSlotStart = "4:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 36L,
+                            TimeSlotId = 36,
                             TimeSlotDay = "Wednesday",
                             TimeSlotStart = "5:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 37L,
+                            TimeSlotId = 37,
                             TimeSlotDay = "Wednesday",
                             TimeSlotStart = "6:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 38L,
+                            TimeSlotId = 38,
                             TimeSlotDay = "Wednesday",
                             TimeSlotStart = "7:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 39L,
+                            TimeSlotId = 39,
                             TimeSlotDay = "Wednesday",
                             TimeSlotStart = "8:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 40L,
+                            TimeSlotId = 40,
                             TimeSlotDay = "Thursday",
                             TimeSlotStart = "8:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 41L,
+                            TimeSlotId = 41,
                             TimeSlotDay = "Thursday",
                             TimeSlotStart = "9:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 42L,
+                            TimeSlotId = 42,
                             TimeSlotDay = "Thursday",
                             TimeSlotStart = "10:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 43L,
+                            TimeSlotId = 43,
                             TimeSlotDay = "Thursday",
                             TimeSlotStart = "11:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 44L,
+                            TimeSlotId = 44,
                             TimeSlotDay = "Thursday",
                             TimeSlotStart = "12:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 45L,
+                            TimeSlotId = 45,
                             TimeSlotDay = "Thursday",
                             TimeSlotStart = "1:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 46L,
+                            TimeSlotId = 46,
                             TimeSlotDay = "Thursday",
                             TimeSlotStart = "2:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 47L,
+                            TimeSlotId = 47,
                             TimeSlotDay = "Thursday",
                             TimeSlotStart = "3:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 48L,
+                            TimeSlotId = 48,
                             TimeSlotDay = "Thursday",
                             TimeSlotStart = "4:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 49L,
+                            TimeSlotId = 49,
                             TimeSlotDay = "Thursday",
                             TimeSlotStart = "5:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 50L,
+                            TimeSlotId = 50,
                             TimeSlotDay = "Thursday",
                             TimeSlotStart = "6:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 51L,
+                            TimeSlotId = 51,
                             TimeSlotDay = "Thursday",
                             TimeSlotStart = "7:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 52L,
+                            TimeSlotId = 52,
                             TimeSlotDay = "Thursday",
                             TimeSlotStart = "8:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 53L,
+                            TimeSlotId = 53,
                             TimeSlotDay = "Friday",
                             TimeSlotStart = "8:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 54L,
+                            TimeSlotId = 54,
                             TimeSlotDay = "Friday",
                             TimeSlotStart = "9:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 55L,
+                            TimeSlotId = 55,
                             TimeSlotDay = "Friday",
                             TimeSlotStart = "10:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 56L,
+                            TimeSlotId = 56,
                             TimeSlotDay = "Friday",
                             TimeSlotStart = "11:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 57L,
+                            TimeSlotId = 57,
                             TimeSlotDay = "Friday",
                             TimeSlotStart = "12:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 58L,
+                            TimeSlotId = 58,
                             TimeSlotDay = "Friday",
                             TimeSlotStart = "1:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 59L,
+                            TimeSlotId = 59,
                             TimeSlotDay = "Friday",
                             TimeSlotStart = "2:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 60L,
+                            TimeSlotId = 60,
                             TimeSlotDay = "Friday",
                             TimeSlotStart = "3:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 61L,
+                            TimeSlotId = 61,
                             TimeSlotDay = "Friday",
                             TimeSlotStart = "4:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 62L,
+                            TimeSlotId = 62,
                             TimeSlotDay = "Friday",
                             TimeSlotStart = "5:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 63L,
+                            TimeSlotId = 63,
                             TimeSlotDay = "Friday",
                             TimeSlotStart = "6:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 64L,
+                            TimeSlotId = 64,
                             TimeSlotDay = "Friday",
                             TimeSlotStart = "7:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 65L,
+                            TimeSlotId = 65,
                             TimeSlotDay = "Friday",
                             TimeSlotStart = "8:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 66L,
+                            TimeSlotId = 66,
                             TimeSlotDay = "Saturday",
                             TimeSlotStart = "8:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 67L,
+                            TimeSlotId = 67,
                             TimeSlotDay = "Saturday",
                             TimeSlotStart = "9:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 68L,
+                            TimeSlotId = 68,
                             TimeSlotDay = "Saturday",
                             TimeSlotStart = "10:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 69L,
+                            TimeSlotId = 69,
                             TimeSlotDay = "Saturday",
                             TimeSlotStart = "11:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 70L,
+                            TimeSlotId = 70,
                             TimeSlotDay = "Saturday",
                             TimeSlotStart = "12:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 71L,
+                            TimeSlotId = 71,
                             TimeSlotDay = "Saturday",
                             TimeSlotStart = "1:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 72L,
+                            TimeSlotId = 72,
                             TimeSlotDay = "Saturday",
                             TimeSlotStart = "2:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 73L,
+                            TimeSlotId = 73,
                             TimeSlotDay = "Saturday",
                             TimeSlotStart = "3:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 74L,
+                            TimeSlotId = 74,
                             TimeSlotDay = "Saturday",
                             TimeSlotStart = "4:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 75L,
+                            TimeSlotId = 75,
                             TimeSlotDay = "Saturday",
                             TimeSlotStart = "5:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 76L,
+                            TimeSlotId = 76,
                             TimeSlotDay = "Saturday",
                             TimeSlotStart = "6:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 77L,
+                            TimeSlotId = 77,
                             TimeSlotDay = "Saturday",
                             TimeSlotStart = "7:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 78L,
+                            TimeSlotId = 78,
                             TimeSlotDay = "Saturday",
                             TimeSlotStart = "8:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 79L,
+                            TimeSlotId = 79,
                             TimeSlotDay = "Sunday",
                             TimeSlotStart = "8:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 80L,
+                            TimeSlotId = 80,
                             TimeSlotDay = "Sunday",
                             TimeSlotStart = "9:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 81L,
+                            TimeSlotId = 81,
                             TimeSlotDay = "Sunday",
                             TimeSlotStart = "10:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 82L,
+                            TimeSlotId = 82,
                             TimeSlotDay = "Sunday",
                             TimeSlotStart = "11:00 AM"
                         },
                         new
                         {
-                            TimeSlotId = 83L,
+                            TimeSlotId = 83,
                             TimeSlotDay = "Sunday",
                             TimeSlotStart = "12:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 84L,
+                            TimeSlotId = 84,
                             TimeSlotDay = "Sunday",
                             TimeSlotStart = "1:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 85L,
+                            TimeSlotId = 85,
                             TimeSlotDay = "Sunday",
                             TimeSlotStart = "2:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 86L,
+                            TimeSlotId = 86,
                             TimeSlotDay = "Sunday",
                             TimeSlotStart = "3:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 87L,
+                            TimeSlotId = 87,
                             TimeSlotDay = "Sunday",
                             TimeSlotStart = "4:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 88L,
+                            TimeSlotId = 88,
                             TimeSlotDay = "Sunday",
                             TimeSlotStart = "5:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 89L,
+                            TimeSlotId = 89,
                             TimeSlotDay = "Sunday",
                             TimeSlotStart = "6:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 90L,
+                            TimeSlotId = 90,
                             TimeSlotDay = "Sunday",
                             TimeSlotStart = "7:00 PM"
                         },
                         new
                         {
-                            TimeSlotId = 91L,
+                            TimeSlotId = 91,
                             TimeSlotDay = "Sunday",
                             TimeSlotStart = "8:00 PM"
                         });
+                });
+
+            modelBuilder.Entity("TempleTours.Models.Appointment", b =>
+                {
+                    b.HasOne("TempleTours.Models.TimeSlot", "TimeSlot")
+                        .WithMany()
+                        .HasForeignKey("TimeSlotId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

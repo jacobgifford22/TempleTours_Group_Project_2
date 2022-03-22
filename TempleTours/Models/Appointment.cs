@@ -21,7 +21,8 @@ namespace TempleTours.Models
         public string Phone { get; set; }
 
         //Build foreign key relationship.
+        [Required]
         public int TimeSlotId { get; set; }
-        public TimeSlot AppointmentTimeSlot { get; set; }
+        public TimeSlot TimeSlot { get; set; }
     }
 }

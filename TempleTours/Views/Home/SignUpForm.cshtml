@@ -11,13 +11,13 @@
 
 
 <div>
-    <p>@Model.AppointmentTimeSlot.TimeSlotDay</p>
-    <p>@Model.AppointmentTimeSlot.TimeSlotStart</p>
+    <p>@Model.TimeSlot.TimeSlotDay</p>
+    <p>@Model.TimeSlot.TimeSlotStart</p>
 
     <form method="post">
         <div asp-validation-summary="All"></div>
         <input type="hidden" id="AppointmentId" asp-for="AppointmentId" />
-        <input type="hidden" id="TimeSlotId" asp-for="AppointmentTimeSlot" />
+        <input type="hidden" id="TimeSlotId "asp-for="TimeSlotId" />
 
         <br />
         <label asp-for="GroupName">Group Name</label>

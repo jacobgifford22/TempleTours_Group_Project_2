@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -36,10 +37,6 @@ namespace TempleTours.Controllers
         }
 
 
-        //////// Start \\\\\\\\
-        
-
-        //Todo: Change
         [HttpPost]
         public IActionResult SignUp(Appointment appt)
         {
@@ -58,8 +55,9 @@ namespace TempleTours.Controllers
         public IActionResult SignUpForm(int id)
         {
             //Edit or Create
-            var timeslot = templeContext.TimeSlots.Single(x => x.TimeSlotId ==id);
-            return View("SignUpForm", new Appointment { AppointmentTimeSlot = timeslot});
+            ViewBag.Timeslot = templeContext.TimeSlots.Single(x => x.TimeSlotId ==id) ;
+            var record = templeContext.TimeSlots.Single(x => x.TimeSlotId == id);
+            return View("SignUpForm",new Appointment { TimeSlot = record, TimeSlotId = record.TimeSlotId});
         }
 
         [HttpPost]
@@ -70,23 +68,24 @@ namespace TempleTours.Controllers
                 templeContext.Add(appt);
                 templeContext.SaveChanges();
 
-                return View("Index");
+                return View("Index", appt);
             }
             else
             {
                 //Not sure. I think we send the same thing as the get. 
-                return View("SignUpForm",appt.AppointmentTimeSlot.TimeSlotId);
+                var record = templeContext.TimeSlots.Single(x => x.TimeSlotId == appt.TimeSlotId);
+                appt.TimeSlot = record;
+                return View(appt);
             }
         }
 
-
-        //Make sure to add edit and delete functionality for appointments.
-        //////// END \\\\\\\\
         [HttpGet]
         public IActionResult Appointments()
         {
             var times = templeContext.Appointments
-                .OrderBy(x => x.AppointmentTimeSlot.TimeSlotStart)
+                .Include(x => x.TimeSlot)
+                .OrderBy(x => x.TimeSlot.TimeSlotDay)
+                .ThenBy(x => x.TimeSlot.TimeSlotStart)
                 .ToList();
 
             return View("Appointments",  times);
@@ -95,8 +94,10 @@ namespace TempleTours.Controllers
         [HttpGet]
         public IActionResult Edit (int id)
         {
-            templeContext.Appointments.Single(x => x.AppointmentId == id);
-            return View("SignUpForm");
+            Appointment appt = templeContext.Appointments.Single(x => x.AppointmentId == id);
+            var record = templeContext.TimeSlots.Single(x => x.TimeSlotId == appt.TimeSlotId);
+            appt.TimeSlot = record;
+            return View("SignUpForm", appt);
         }
 
         [HttpPost]
@@ -106,13 +107,22 @@ namespace TempleTours.Controllers
             {
                 templeContext.Update(appt);
                 templeContext.SaveChanges();
-
-                return View("Appointments", appt);
+                return RedirectToAction("Appointments");
             }
             else
             {
-                return RedirectToAction("SighUpForm", new { id = appt.AppointmentId });
+                var record = templeContext.TimeSlots.Single(x => x.TimeSlotId == appt.TimeSlotId);
+                appt.TimeSlot = record;
+                return View("SignUpForm", appt);
             }
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var appt = templeContext.Appointments.Single(x => x.AppointmentId == id);
+            templeContext.Appointments.Remove(appt);
+            templeContext.SaveChanges();
+            return RedirectToAction("Appointments");
         }
     }
 }
