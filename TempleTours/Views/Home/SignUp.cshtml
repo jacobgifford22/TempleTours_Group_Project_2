@@ -10,5 +10,8 @@
 
 @foreach (TimeSlot x in Model.TimeSlots)
 {
-    <partial name="TimeSlotSummary" model="x" />
+    @if (x.Available == true)
+    {
+        <partial name="TimeSlotSummary" model="x" />
+    }
 }

@@ -8,14 +8,16 @@
 
 
 <h1>Appointments</h1>
+
+<p>See all scheduled appointments:</p>
+
 <div class="line">
 
 
     <table class="table table-bordered table-striped">
         <thead class="font-weight-bold">
             <tr>
-                <td>Appointment Id</td>
-                <td>Appointment Time</td>
+                <td>Time</td>
                 <td>Group Name</td>
                 <td>Group Size</td>
                 <td>Email</td>
@@ -27,14 +29,14 @@
             @foreach (var x in Model)
             {
                 <tr>
-                    <td>@x.AppointmentId</td>
+                    <td>@x.TimeSlot.TimeSlotDay @x.TimeSlot.TimeSlotStart:00</td>
                     <td>@x.GroupName</td>
                     <td>@x.GroupSize</td>
                     <td>@x.Email</td>
                     <td>@x.Phone</td>
 
-                    <td><a asp-controller="Home" asp-action="Edit" asp-route="@x.AppointmentId">Edit</a></td>
-                    <td><a asp-controller="Home" asp-action="Delete" asp-route="@x.AppointmentId">Delete</a></td>
+                    <td><a class="btn btn-warning"asp-controller="Home" asp-action="Edit" asp-route-id="@x.AppointmentId">Edit</a></td>
+                    <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.AppointmentId">Delete</a></td>
                 </tr>
             }
         </tbody>

@@ -6,37 +6,51 @@
 
 @model TempleTours.Models.Appointment
 
+<style>
+    .form-element label {
+        display: inline-block;
+        width: 150px;
+    }
 
-<h1>PLease fill out the information below to secure your temple tour appointment.</h1>
-
+</style>
 
 <div>
-    <p>@Model.AppointmentTimeSlot.TimeSlotDay</p>
-    <p>@Model.AppointmentTimeSlot.TimeSlotStart</p>
+    <h1>Appointment Time</h1>
+    <h4>@Model.TimeSlot.TimeSlotDay @Model.TimeSlot.TimeSlotStart:00</h4>
 
     <form method="post">
-        <div asp-validation-summary="All"></div>
+
         <input type="hidden" id="AppointmentId" asp-for="AppointmentId" />
-        <input type="hidden" id="TimeSlotId" asp-for="AppointmentTimeSlot" />
-
-        <br />
-        <label asp-for="GroupName">Group Name</label>
-        <input asp-for="GroupName" />
+        <input type="hidden" id="TimeSlotId " asp-for="TimeSlotId" />
         <br />
 
-        <label asp-for="GroupSize">Group Size</label>
-        <input asp-for="GroupSize" />
-        <br />
+        <div class="form-element">
+            <label asp-for="GroupName">Group Name</label>
+            <input asp-for="GroupName" />
+            <br />
+        </div>
 
-        <label asp-for="Email">Email</label>
-        <input asp-for="Email" />
-        <br />
+        <div class="form-element">
+            <label asp-for="GroupSize">Group Size</label>
+            <input asp-for="GroupSize" />
+            <br />
+        </div>
 
-        <label asp-for="Phone">Phone Number</label>
-        <input asp-for="Phone" />
 
-        <br />
+        <div class="form-element">
+            <label asp-for="Email">Email</label>
+            <input asp-for="Email" />
+            <br />
+        </div>
 
-        <button type="submit">Submit Tour</button>
+        <div class="form-element">
+            <label asp-for="Phone">Phone Number</label>
+            <input asp-for="Phone" />
+            <br />
+        </div>
+        <br /> 
+
+        <button class="btn btn-primary" type="submit">Submit Tour</button>
+        <div asp-validation-summary="All"></div>
     </form>
 </div>
