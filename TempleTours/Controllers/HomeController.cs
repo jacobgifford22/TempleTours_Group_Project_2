@@ -65,6 +65,9 @@ namespace TempleTours.Controllers
         {
             if (ModelState.IsValid)
             {
+                var record = templeContext.TimeSlots.Single(x => x.TimeSlotId == appt.TimeSlotId);
+                record.Available = false; 
+                templeContext.Update(record); 
                 templeContext.Add(appt);
                 templeContext.SaveChanges();
 
@@ -120,6 +123,9 @@ namespace TempleTours.Controllers
         public IActionResult Delete(int id)
         {
             var appt = templeContext.Appointments.Single(x => x.AppointmentId == id);
+            var record = templeContext.TimeSlots.Single(x => x.TimeSlotId == appt.TimeSlotId);
+            record.Available = true;
+            templeContext.TimeSlots.Update(record); 
             templeContext.Appointments.Remove(appt);
             templeContext.SaveChanges();
             return RedirectToAction("Appointments");

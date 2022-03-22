@@ -7,7 +7,9 @@
     <div class="card-text p-1">
         <span>Date: @Model.TimeSlotDay</span>
         <br />
-        <span>Time: @Model.TimeSlotStart</span>
+        <span>Time: @Model.TimeSlotStart:00</span>
     </div>
-    <a asp-controller="Home" asp-action="SignUpForm" asp-route-id="@Model.TimeSlotId">Edit</a>
+    <div style="width:auto">
+        <a class="btn btn-primary" asp-controller="Home" asp-action="SignUpForm" asp-route-id="@Model.TimeSlotId">Sign Up</a>
+    </div>
 </div>

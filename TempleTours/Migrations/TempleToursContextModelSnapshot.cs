@@ -51,11 +51,14 @@ namespace TempleTours.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("Available")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("TimeSlotDay")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("TimeSlotStart")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("TimeSlotStart")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("TimeSlotId");
 
@@ -65,548 +68,639 @@ namespace TempleTours.Migrations
                         new
                         {
                             TimeSlotId = 1,
+                            Available = true,
                             TimeSlotDay = "Monday",
-                            TimeSlotStart = "8:00 AM"
+                            TimeSlotStart = 8
                         },
                         new
                         {
                             TimeSlotId = 2,
+                            Available = true,
                             TimeSlotDay = "Monday",
-                            TimeSlotStart = "9:00 AM"
+                            TimeSlotStart = 9
                         },
                         new
                         {
                             TimeSlotId = 3,
+                            Available = true,
                             TimeSlotDay = "Monday",
-                            TimeSlotStart = "10:00 AM"
+                            TimeSlotStart = 10
                         },
                         new
                         {
                             TimeSlotId = 4,
+                            Available = true,
                             TimeSlotDay = "Monday",
-                            TimeSlotStart = "11:00 AM"
+                            TimeSlotStart = 11
                         },
                         new
                         {
                             TimeSlotId = 5,
+                            Available = true,
                             TimeSlotDay = "Monday",
-                            TimeSlotStart = "12:00 PM"
+                            TimeSlotStart = 12
                         },
                         new
                         {
                             TimeSlotId = 6,
+                            Available = true,
                             TimeSlotDay = "Monday",
-                            TimeSlotStart = "1:00 PM"
+                            TimeSlotStart = 13
                         },
                         new
                         {
                             TimeSlotId = 7,
+                            Available = true,
                             TimeSlotDay = "Monday",
-                            TimeSlotStart = "2:00 PM"
+                            TimeSlotStart = 14
                         },
                         new
                         {
                             TimeSlotId = 8,
+                            Available = true,
                             TimeSlotDay = "Monday",
-                            TimeSlotStart = "3:00 PM"
+                            TimeSlotStart = 15
                         },
                         new
                         {
                             TimeSlotId = 9,
+                            Available = true,
                             TimeSlotDay = "Monday",
-                            TimeSlotStart = "4:00 PM"
+                            TimeSlotStart = 16
                         },
                         new
                         {
                             TimeSlotId = 10,
+                            Available = true,
                             TimeSlotDay = "Monday",
-                            TimeSlotStart = "5:00 PM"
+                            TimeSlotStart = 17
                         },
                         new
                         {
                             TimeSlotId = 11,
+                            Available = true,
                             TimeSlotDay = "Monday",
-                            TimeSlotStart = "6:00 PM"
+                            TimeSlotStart = 18
                         },
                         new
                         {
                             TimeSlotId = 12,
+                            Available = true,
                             TimeSlotDay = "Monday",
-                            TimeSlotStart = "7:00 PM"
+                            TimeSlotStart = 19
                         },
                         new
                         {
                             TimeSlotId = 13,
+                            Available = true,
                             TimeSlotDay = "Monday",
-                            TimeSlotStart = "8:00 PM"
+                            TimeSlotStart = 20
                         },
                         new
                         {
                             TimeSlotId = 14,
+                            Available = true,
                             TimeSlotDay = "Tuesday",
-                            TimeSlotStart = "8:00 AM"
+                            TimeSlotStart = 8
                         },
                         new
                         {
                             TimeSlotId = 15,
+                            Available = true,
                             TimeSlotDay = "Tuesday",
-                            TimeSlotStart = "9:00 AM"
+                            TimeSlotStart = 9
                         },
                         new
                         {
                             TimeSlotId = 16,
+                            Available = true,
                             TimeSlotDay = "Tuesday",
-                            TimeSlotStart = "10:00 AM"
+                            TimeSlotStart = 10
                         },
                         new
                         {
                             TimeSlotId = 17,
+                            Available = true,
                             TimeSlotDay = "Tuesday",
-                            TimeSlotStart = "11:00 AM"
+                            TimeSlotStart = 11
                         },
                         new
                         {
                             TimeSlotId = 18,
+                            Available = true,
                             TimeSlotDay = "Tuesday",
-                            TimeSlotStart = "12:00 PM"
+                            TimeSlotStart = 12
                         },
                         new
                         {
                             TimeSlotId = 19,
+                            Available = true,
                             TimeSlotDay = "Tuesday",
-                            TimeSlotStart = "1:00 PM"
+                            TimeSlotStart = 13
                         },
                         new
                         {
                             TimeSlotId = 20,
+                            Available = true,
                             TimeSlotDay = "Tuesday",
-                            TimeSlotStart = "2:00 PM"
+                            TimeSlotStart = 14
                         },
                         new
                         {
                             TimeSlotId = 21,
+                            Available = true,
                             TimeSlotDay = "Tuesday",
-                            TimeSlotStart = "3:00 PM"
+                            TimeSlotStart = 15
                         },
                         new
                         {
                             TimeSlotId = 22,
+                            Available = true,
                             TimeSlotDay = "Tuesday",
-                            TimeSlotStart = "4:00 PM"
+                            TimeSlotStart = 16
                         },
                         new
                         {
                             TimeSlotId = 23,
+                            Available = true,
                             TimeSlotDay = "Tuesday",
-                            TimeSlotStart = "5:00 PM"
+                            TimeSlotStart = 17
                         },
                         new
                         {
                             TimeSlotId = 24,
+                            Available = true,
                             TimeSlotDay = "Tuesday",
-                            TimeSlotStart = "6:00 PM"
+                            TimeSlotStart = 18
                         },
                         new
                         {
                             TimeSlotId = 25,
+                            Available = true,
                             TimeSlotDay = "Tuesday",
-                            TimeSlotStart = "7:00 PM"
+                            TimeSlotStart = 19
                         },
                         new
                         {
                             TimeSlotId = 26,
+                            Available = true,
                             TimeSlotDay = "Tuesday",
-                            TimeSlotStart = "8:00 PM"
+                            TimeSlotStart = 20
                         },
                         new
                         {
                             TimeSlotId = 27,
+                            Available = true,
                             TimeSlotDay = "Wednesday",
-                            TimeSlotStart = "8:00 AM"
+                            TimeSlotStart = 8
                         },
                         new
                         {
                             TimeSlotId = 28,
+                            Available = true,
                             TimeSlotDay = "Wednesday",
-                            TimeSlotStart = "9:00 AM"
+                            TimeSlotStart = 9
                         },
                         new
                         {
                             TimeSlotId = 29,
+                            Available = true,
                             TimeSlotDay = "Wednesday",
-                            TimeSlotStart = "10:00 AM"
+                            TimeSlotStart = 10
                         },
                         new
                         {
                             TimeSlotId = 30,
+                            Available = true,
                             TimeSlotDay = "Wednesday",
-                            TimeSlotStart = "11:00 AM"
+                            TimeSlotStart = 11
                         },
                         new
                         {
                             TimeSlotId = 31,
+                            Available = true,
                             TimeSlotDay = "Wednesday",
-                            TimeSlotStart = "12:00 PM"
+                            TimeSlotStart = 12
                         },
                         new
                         {
                             TimeSlotId = 32,
+                            Available = true,
                             TimeSlotDay = "Wednesday",
-                            TimeSlotStart = "1:00 PM"
+                            TimeSlotStart = 13
                         },
                         new
                         {
                             TimeSlotId = 33,
+                            Available = true,
                             TimeSlotDay = "Wednesday",
-                            TimeSlotStart = "2:00 PM"
+                            TimeSlotStart = 14
                         },
                         new
                         {
                             TimeSlotId = 34,
+                            Available = true,
                             TimeSlotDay = "Wednesday",
-                            TimeSlotStart = "3:00 PM"
+                            TimeSlotStart = 15
                         },
                         new
                         {
                             TimeSlotId = 35,
+                            Available = true,
                             TimeSlotDay = "Wednesday",
-                            TimeSlotStart = "4:00 PM"
+                            TimeSlotStart = 16
                         },
                         new
                         {
                             TimeSlotId = 36,
+                            Available = true,
                             TimeSlotDay = "Wednesday",
-                            TimeSlotStart = "5:00 PM"
+                            TimeSlotStart = 17
                         },
                         new
                         {
                             TimeSlotId = 37,
+                            Available = true,
                             TimeSlotDay = "Wednesday",
-                            TimeSlotStart = "6:00 PM"
+                            TimeSlotStart = 18
                         },
                         new
                         {
                             TimeSlotId = 38,
+                            Available = true,
                             TimeSlotDay = "Wednesday",
-                            TimeSlotStart = "7:00 PM"
+                            TimeSlotStart = 19
                         },
                         new
                         {
                             TimeSlotId = 39,
+                            Available = true,
                             TimeSlotDay = "Wednesday",
-                            TimeSlotStart = "8:00 PM"
+                            TimeSlotStart = 20
                         },
                         new
                         {
                             TimeSlotId = 40,
+                            Available = true,
                             TimeSlotDay = "Thursday",
-                            TimeSlotStart = "8:00 AM"
+                            TimeSlotStart = 8
                         },
                         new
                         {
                             TimeSlotId = 41,
+                            Available = true,
                             TimeSlotDay = "Thursday",
-                            TimeSlotStart = "9:00 AM"
+                            TimeSlotStart = 9
                         },
                         new
                         {
                             TimeSlotId = 42,
+                            Available = true,
                             TimeSlotDay = "Thursday",
-                            TimeSlotStart = "10:00 AM"
+                            TimeSlotStart = 10
                         },
                         new
                         {
                             TimeSlotId = 43,
+                            Available = true,
                             TimeSlotDay = "Thursday",
-                            TimeSlotStart = "11:00 AM"
+                            TimeSlotStart = 11
                         },
                         new
                         {
                             TimeSlotId = 44,
+                            Available = true,
                             TimeSlotDay = "Thursday",
-                            TimeSlotStart = "12:00 PM"
+                            TimeSlotStart = 12
                         },
                         new
                         {
                             TimeSlotId = 45,
+                            Available = true,
                             TimeSlotDay = "Thursday",
-                            TimeSlotStart = "1:00 PM"
+                            TimeSlotStart = 13
                         },
                         new
                         {
                             TimeSlotId = 46,
+                            Available = true,
                             TimeSlotDay = "Thursday",
-                            TimeSlotStart = "2:00 PM"
+                            TimeSlotStart = 14
                         },
                         new
                         {
                             TimeSlotId = 47,
+                            Available = true,
                             TimeSlotDay = "Thursday",
-                            TimeSlotStart = "3:00 PM"
+                            TimeSlotStart = 15
                         },
                         new
                         {
                             TimeSlotId = 48,
+                            Available = true,
                             TimeSlotDay = "Thursday",
-                            TimeSlotStart = "4:00 PM"
+                            TimeSlotStart = 16
                         },
                         new
                         {
                             TimeSlotId = 49,
+                            Available = true,
                             TimeSlotDay = "Thursday",
-                            TimeSlotStart = "5:00 PM"
+                            TimeSlotStart = 17
                         },
                         new
                         {
                             TimeSlotId = 50,
+                            Available = true,
                             TimeSlotDay = "Thursday",
-                            TimeSlotStart = "6:00 PM"
+                            TimeSlotStart = 18
                         },
                         new
                         {
                             TimeSlotId = 51,
+                            Available = true,
                             TimeSlotDay = "Thursday",
-                            TimeSlotStart = "7:00 PM"
+                            TimeSlotStart = 19
                         },
                         new
                         {
                             TimeSlotId = 52,
+                            Available = true,
                             TimeSlotDay = "Thursday",
-                            TimeSlotStart = "8:00 PM"
+                            TimeSlotStart = 20
                         },
                         new
                         {
                             TimeSlotId = 53,
+                            Available = true,
                             TimeSlotDay = "Friday",
-                            TimeSlotStart = "8:00 AM"
+                            TimeSlotStart = 8
                         },
                         new
                         {
                             TimeSlotId = 54,
+                            Available = true,
                             TimeSlotDay = "Friday",
-                            TimeSlotStart = "9:00 AM"
+                            TimeSlotStart = 9
                         },
                         new
                         {
                             TimeSlotId = 55,
+                            Available = true,
                             TimeSlotDay = "Friday",
-                            TimeSlotStart = "10:00 AM"
+                            TimeSlotStart = 10
                         },
                         new
                         {
                             TimeSlotId = 56,
+                            Available = true,
                             TimeSlotDay = "Friday",
-                            TimeSlotStart = "11:00 AM"
+                            TimeSlotStart = 11
                         },
                         new
                         {
                             TimeSlotId = 57,
+                            Available = true,
                             TimeSlotDay = "Friday",
-                            TimeSlotStart = "12:00 PM"
+                            TimeSlotStart = 12
                         },
                         new
                         {
                             TimeSlotId = 58,
+                            Available = true,
                             TimeSlotDay = "Friday",
-                            TimeSlotStart = "1:00 PM"
+                            TimeSlotStart = 13
                         },
                         new
                         {
                             TimeSlotId = 59,
+                            Available = true,
                             TimeSlotDay = "Friday",
-                            TimeSlotStart = "2:00 PM"
+                            TimeSlotStart = 14
                         },
                         new
                         {
                             TimeSlotId = 60,
+                            Available = true,
                             TimeSlotDay = "Friday",
-                            TimeSlotStart = "3:00 PM"
+                            TimeSlotStart = 15
                         },
                         new
                         {
                             TimeSlotId = 61,
+                            Available = true,
                             TimeSlotDay = "Friday",
-                            TimeSlotStart = "4:00 PM"
+                            TimeSlotStart = 16
                         },
                         new
                         {
                             TimeSlotId = 62,
+                            Available = true,
                             TimeSlotDay = "Friday",
-                            TimeSlotStart = "5:00 PM"
+                            TimeSlotStart = 17
                         },
                         new
                         {
                             TimeSlotId = 63,
+                            Available = true,
                             TimeSlotDay = "Friday",
-                            TimeSlotStart = "6:00 PM"
+                            TimeSlotStart = 18
                         },
                         new
                         {
                             TimeSlotId = 64,
+                            Available = true,
                             TimeSlotDay = "Friday",
-                            TimeSlotStart = "7:00 PM"
+                            TimeSlotStart = 19
                         },
                         new
                         {
                             TimeSlotId = 65,
+                            Available = true,
                             TimeSlotDay = "Friday",
-                            TimeSlotStart = "8:00 PM"
+                            TimeSlotStart = 20
                         },
                         new
                         {
                             TimeSlotId = 66,
+                            Available = true,
                             TimeSlotDay = "Saturday",
-                            TimeSlotStart = "8:00 AM"
+                            TimeSlotStart = 8
                         },
                         new
                         {
                             TimeSlotId = 67,
+                            Available = true,
                             TimeSlotDay = "Saturday",
-                            TimeSlotStart = "9:00 AM"
+                            TimeSlotStart = 9
                         },
                         new
                         {
                             TimeSlotId = 68,
+                            Available = true,
                             TimeSlotDay = "Saturday",
-                            TimeSlotStart = "10:00 AM"
+                            TimeSlotStart = 10
                         },
                         new
                         {
                             TimeSlotId = 69,
+                            Available = true,
                             TimeSlotDay = "Saturday",
-                            TimeSlotStart = "11:00 AM"
+                            TimeSlotStart = 11
                         },
                         new
                         {
                             TimeSlotId = 70,
+                            Available = true,
                             TimeSlotDay = "Saturday",
-                            TimeSlotStart = "12:00 PM"
+                            TimeSlotStart = 12
                         },
                         new
                         {
                             TimeSlotId = 71,
+                            Available = true,
                             TimeSlotDay = "Saturday",
-                            TimeSlotStart = "1:00 PM"
+                            TimeSlotStart = 13
                         },
                         new
                         {
                             TimeSlotId = 72,
+                            Available = true,
                             TimeSlotDay = "Saturday",
-                            TimeSlotStart = "2:00 PM"
+                            TimeSlotStart = 14
                         },
                         new
                         {
                             TimeSlotId = 73,
+                            Available = true,
                             TimeSlotDay = "Saturday",
-                            TimeSlotStart = "3:00 PM"
+                            TimeSlotStart = 15
                         },
                         new
                         {
                             TimeSlotId = 74,
+                            Available = true,
                             TimeSlotDay = "Saturday",
-                            TimeSlotStart = "4:00 PM"
+                            TimeSlotStart = 16
                         },
                         new
                         {
                             TimeSlotId = 75,
+                            Available = true,
                             TimeSlotDay = "Saturday",
-                            TimeSlotStart = "5:00 PM"
+                            TimeSlotStart = 17
                         },
                         new
                         {
                             TimeSlotId = 76,
+                            Available = true,
                             TimeSlotDay = "Saturday",
-                            TimeSlotStart = "6:00 PM"
+                            TimeSlotStart = 18
                         },
                         new
                         {
                             TimeSlotId = 77,
+                            Available = true,
                             TimeSlotDay = "Saturday",
-                            TimeSlotStart = "7:00 PM"
+                            TimeSlotStart = 19
                         },
                         new
                         {
                             TimeSlotId = 78,
+                            Available = true,
                             TimeSlotDay = "Saturday",
-                            TimeSlotStart = "8:00 PM"
+                            TimeSlotStart = 20
                         },
                         new
                         {
                             TimeSlotId = 79,
+                            Available = true,
                             TimeSlotDay = "Sunday",
-                            TimeSlotStart = "8:00 AM"
+                            TimeSlotStart = 8
                         },
                         new
                         {
                             TimeSlotId = 80,
+                            Available = true,
                             TimeSlotDay = "Sunday",
-                            TimeSlotStart = "9:00 AM"
+                            TimeSlotStart = 9
                         },
                         new
                         {
                             TimeSlotId = 81,
+                            Available = true,
                             TimeSlotDay = "Sunday",
-                            TimeSlotStart = "10:00 AM"
+                            TimeSlotStart = 10
                         },
                         new
                         {
                             TimeSlotId = 82,
+                            Available = true,
                             TimeSlotDay = "Sunday",
-                            TimeSlotStart = "11:00 AM"
+                            TimeSlotStart = 11
                         },
                         new
                         {
                             TimeSlotId = 83,
+                            Available = true,
                             TimeSlotDay = "Sunday",
-                            TimeSlotStart = "12:00 PM"
+                            TimeSlotStart = 12
                         },
                         new
                         {
                             TimeSlotId = 84,
+                            Available = true,
                             TimeSlotDay = "Sunday",
-                            TimeSlotStart = "1:00 PM"
+                            TimeSlotStart = 13
                         },
                         new
                         {
                             TimeSlotId = 85,
+                            Available = true,
                             TimeSlotDay = "Sunday",
-                            TimeSlotStart = "2:00 PM"
+                            TimeSlotStart = 14
                         },
                         new
                         {
                             TimeSlotId = 86,
+                            Available = true,
                             TimeSlotDay = "Sunday",
-                            TimeSlotStart = "3:00 PM"
+                            TimeSlotStart = 15
                         },
                         new
                         {
                             TimeSlotId = 87,
+                            Available = true,
                             TimeSlotDay = "Sunday",
-                            TimeSlotStart = "4:00 PM"
+                            TimeSlotStart = 16
                         },
                         new
                         {
                             TimeSlotId = 88,
+                            Available = true,
                             TimeSlotDay = "Sunday",
-                            TimeSlotStart = "5:00 PM"
+                            TimeSlotStart = 17
                         },
                         new
                         {
                             TimeSlotId = 89,
+                            Available = true,
                             TimeSlotDay = "Sunday",
-                            TimeSlotStart = "6:00 PM"
+                            TimeSlotStart = 18
                         },
                         new
                         {
                             TimeSlotId = 90,
+                            Available = true,
                             TimeSlotDay = "Sunday",
-                            TimeSlotStart = "7:00 PM"
+                            TimeSlotStart = 19
                         },
                         new
                         {
                             TimeSlotId = 91,
+                            Available = true,
                             TimeSlotDay = "Sunday",
-                            TimeSlotStart = "8:00 PM"
+                            TimeSlotStart = 20
                         });
                 });
 
