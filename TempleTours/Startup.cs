@@ -51,9 +51,16 @@ namespace TempleTours
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
+/*                endpoints.MapControllerRoute(
+                    name: "SignUp",
+                    pattern: "SignUp/{id?}",
+                    defaults: new { Controller = "Home", action = "Index" });
+*/
+            //Default
+                    endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}",
+                    defaults: new { Controller = "Home", action = "Index"});
             });
         }
     }

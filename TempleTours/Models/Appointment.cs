@@ -11,7 +11,6 @@ namespace TempleTours.Models
         [Key]
         [Required]
         public long AppointmentId { get; set; }
-        public string AppointmentTime { get; set; }
         [Required(ErrorMessage ="Please enter a group name.")]
         public string GroupName { get; set; }
         [Required(ErrorMessage ="Please make sure your group is no larger than 15 people.")]
@@ -20,5 +19,9 @@ namespace TempleTours.Models
         [Required(ErrorMessage ="Please enter an email address.")]
         public string Email { get; set; }
         public string Phone { get; set; }
+
+        //Build foreign key relationship.
+        public int TimeSlotId { get; set; }
+        public TimeSlot AppointmentTimeSlot { get; set; }
     }
 }

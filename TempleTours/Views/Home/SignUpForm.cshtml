@@ -11,27 +11,25 @@
 
 
 <div>
-    <form method="post">
+    <p>@Model.AppointmentTimeSlot.TimeSlotDay</p>
+    <p>@Model.AppointmentTimeSlot.TimeSlotStart</p>
 
-        <!--Make sure that this appointment time can't be changed-->
-        <label asp-for="AppointmentTime">Appointment Time</label>
-        <input disabled value=""/>
+    <form method="post">
+        <div asp-validation-summary="All"></div>
+        <input type="hidden" id="AppointmentId" asp-for="AppointmentId" />
+        <input type="hidden" id="TimeSlotId" asp-for="AppointmentTimeSlot" />
 
         <br />
-
         <label asp-for="GroupName">Group Name</label>
         <input asp-for="GroupName" />
-
         <br />
 
         <label asp-for="GroupSize">Group Size</label>
-        <input asp-for="GroupSize"/>
-
+        <input asp-for="GroupSize" />
         <br />
 
         <label asp-for="Email">Email</label>
         <input asp-for="Email" />
-
         <br />
 
         <label asp-for="Phone">Phone Number</label>
@@ -40,7 +38,5 @@
         <br />
 
         <button type="submit">Submit Tour</button>
-        <div asp-validation-summary="All"></div>
-
     </form>
 </div>

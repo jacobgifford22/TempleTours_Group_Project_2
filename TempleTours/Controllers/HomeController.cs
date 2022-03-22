@@ -35,12 +35,17 @@ namespace TempleTours.Controllers
             return View(x);
         }
 
+
+        //////// Start \\\\\\\\
+        
+
+        //Todo: Change
         [HttpPost]
         public IActionResult SignUp(Appointment appt)
         {
             if (ModelState.IsValid)
             {
-                
+                //Pass a time slot appointment
                 return View("SignUpForm", appt);
             }
             else
@@ -50,9 +55,11 @@ namespace TempleTours.Controllers
         }
 
         [HttpGet]
-        public IActionResult SignUpForm()
+        public IActionResult SignUpForm(int id)
         {
-            return View("SignUpForm");
+            //Edit or Create
+            var timeslot = templeContext.TimeSlots.Single(x => x.TimeSlotId ==id);
+            return View("SignUpForm", new Appointment { AppointmentTimeSlot = timeslot});
         }
 
         [HttpPost]
@@ -63,20 +70,23 @@ namespace TempleTours.Controllers
                 templeContext.Add(appt);
                 templeContext.SaveChanges();
 
-                return View("Index", appt);
+                return View("Index");
             }
             else
             {
-
-                return RedirectToAction("SignUpForm", new { id = appt.AppointmentId });
+                //Not sure. I think we send the same thing as the get. 
+                return View("SignUpForm",appt.AppointmentTimeSlot.TimeSlotId);
             }
         }
 
+
+        //Make sure to add edit and delete functionality for appointments.
+        //////// END \\\\\\\\
         [HttpGet]
         public IActionResult Appointments()
         {
             var times = templeContext.Appointments
-                .OrderBy(x => x.AppointmentTime)
+                .OrderBy(x => x.AppointmentTimeSlot.TimeSlotStart)
                 .ToList();
 
             return View("Appointments",  times);

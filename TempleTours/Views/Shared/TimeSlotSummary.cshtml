@@ -9,12 +9,5 @@
         <br />
         <span>Time: @Model.TimeSlotStart</span>
     </div>
-
-    <form method="post" asp-controller="Home" asp-action="SignUpForm">
-        <input type="hidden" asp-for="@Model.TimeSlotId" />
-
-        <span class="card-text">
-            <button type="submit" class="btn btn-success btn-sm float-end">Sign Up</button>
-        </span>
-    </form>
+    <a asp-controller="Home" asp-action="SignUpForm" asp-route-id="@Model.TimeSlotId">Edit</a>
 </div>
